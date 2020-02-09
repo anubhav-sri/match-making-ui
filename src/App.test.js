@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import {shallow} from "enzyme";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+test('renders spark dates header', () => {
+    const app = shallow(<App/>);
+    expect(app.find('.heading').childAt(0).text()).toContain("Spark Dates, Made for all")
 });
