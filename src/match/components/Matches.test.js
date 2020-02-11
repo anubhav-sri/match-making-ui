@@ -8,7 +8,7 @@ import {act} from 'react-dom/test-utils';
 
 jest.mock('axios');
 
-describe('My Connected React-Redux Component', () => {
+describe('Matches component, displays all macthes', () => {
     let container = document.createElement("div");
 
     let resp = {data: {matches: [{displayName: "fname"}, {displayName: "anotherName"}]}};
