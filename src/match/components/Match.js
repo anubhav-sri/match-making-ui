@@ -6,7 +6,6 @@ import CardContent from "@material-ui/core/CardContent";
 import FavoriteIcon from '@material-ui/icons/FavoriteSharp';
 import {CardHeader} from "@material-ui/core";
 import Badge from "@material-ui/core/Badge";
-import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles({
     root: {

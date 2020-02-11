@@ -20,7 +20,6 @@ class Matches extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(this.props);
         if (this.props !== prevProps) {
             this.setState({
                 success: this.props.success.success,
@@ -32,7 +31,6 @@ class Matches extends React.Component {
     }
 
     render() {
-        console.log("Rendering"+ this.state.success);
         if (this.state.success) {
             return (
                 this.state.matches.map(m => <Match match={m}/>)
