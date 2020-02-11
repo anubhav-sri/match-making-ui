@@ -11,7 +11,7 @@ jest.mock('axios');
 describe('Matches component, displays all macthes', () => {
     let container = document.createElement("div");
 
-    let resp = {data: {matches: [{displayName: "fname"}, {displayName: "anotherName"}]}};
+    let resp = {data: {matches: [{displayName: "fname", city: {}}, {displayName: "anotherName", city: {}}]}};
     axios.get.mockResolvedValue(resp);
     beforeEach(() => {
         act(() => {
@@ -22,7 +22,7 @@ describe('Matches component, displays all macthes', () => {
                 , container);
         });
     });
-    it('should render with given state from Redux store', () => {
+    it('should render the list of macthes', () => {
         expect(container.textContent).toContain("fname");
         expect(container.textContent).toContain("anotherName");
     });
