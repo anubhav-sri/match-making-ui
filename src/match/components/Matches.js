@@ -2,6 +2,8 @@ import * as React from "react";
 import connect from "react-redux/lib/connect/connect";
 import getMatches from "../reducers/GetMatches";
 import Match from "./Match";
+import Grid from "@material-ui/core/Grid";
+import FormControl from "@material-ui/core/FormControl";
 
 class Matches extends React.Component {
     constructor(props) {
@@ -37,9 +39,9 @@ class Matches extends React.Component {
                     <div>
                         Found {this.state.matches.length} Matches for you
                     </div>
-                    <div>
-                        {this.state.matches.map(m => <Match match={m}/>)}
-                    </div>
+                    <Grid container spacing={3}>
+                        {this.state.matches.map(m => <Grid item xs={12}><Match match={m}/></Grid>)}
+                    </Grid>
                 </div>
             )
         }
