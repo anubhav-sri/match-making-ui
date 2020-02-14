@@ -1,10 +1,10 @@
-import axios from 'axios';
 import {getMatchesError, getMatchesPending, getMatchesSuccess} from "./actions/MatchActions";
+import findMatches from "./service/FindMatchService";
 
 function getMatches(userId) {
     return (dispatch) => {
         dispatch(getMatchesPending());
-        axios.get('http://localhost:8090/users/' + userId + '/matches/')
+        findMatches(userId)
             .then(res => {
                 dispatch(getMatchesSuccess(res.data.matches));
             })

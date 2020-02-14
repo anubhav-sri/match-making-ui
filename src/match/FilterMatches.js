@@ -1,16 +1,13 @@
 import {getMatchesError, getMatchesPending, getMatchesSuccess} from "./actions/MatchActions";
 import {initialFilters} from "./components/FIlterStates";
 import {filterMatchesError} from "./actions/FiltersActions";
-import axios from "axios";
-import {FILTER_MATCH_SERVICE_URL} from "./properties";
+import findMatches from "./service/FindMatchService";
 
 function filterMatches(userId, filters) {
     return (dispatch) => {
         let params = createParams(filters);
         dispatch(getMatchesPending());
-        return axios.get(FILTER_MATCH_SERVICE_URL + '/users/' + userId + '/matches', {
-            params: params, config: {headers: {latitude: 53.801277, longitude: -1.548567}}
-        }).then(res => {
+        return findMatches(userId, params).then(res => {
             return dispatch(getMatchesSuccess(res.data.matches));
         })
             .catch(err => {
