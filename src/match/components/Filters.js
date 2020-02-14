@@ -124,7 +124,7 @@ class Filters extends React.Component {
                                 labelPlacement="end"
                             />
                         </Grid>
-                        <Grid item xs={4} className="age-filter">
+                        <Grid item xs={6} className="age-filter">
                             <Typography id="ageRange" gutterBottom>
                                 Age (Years)
                             </Typography>
@@ -137,7 +137,7 @@ class Filters extends React.Component {
                                     aria-labelledby="ageRange"
                             />
                         </Grid>
-                        <Grid item xs={4} className="distance-filter">
+                        <Grid item xs={6} className="distance-filter">
                             <Typography id="distanceRange" gutterBottom>
                                 Distance (Kms)
                             </Typography>
@@ -151,7 +151,7 @@ class Filters extends React.Component {
                                 aria-labelledby="range-slider"
                             />
                         </Grid>
-                        <Grid item xs={4} className="height-filter">
+                        <Grid item xs={6} className="height-filter">
                             <Typography id="heightRange" gutterBottom>
                                 Height (Cms)
                             </Typography>
@@ -166,7 +166,7 @@ class Filters extends React.Component {
                                 aria-label="heightRange"
                             />
                         </Grid>
-                        <Grid item xs={4} className="compatibility-filter">
+                        <Grid item xs={6} className="compatibility-filter">
                             <Typography id="compatibility-range" gutterBottom>
                                 Compatible (%)
                             </Typography>
@@ -182,19 +182,21 @@ class Filters extends React.Component {
                                 aria-labelledby="within-distance"
                             />
                         </Grid>
-                        <Grid container spacing={1}>
-                            <Grid item xs={2}>
-                                <Button variant="contained" color="primary" type="submit"
-                                        disabled={this.state.pending}>
-                                    Filter
-                                </Button>
-                            </Grid>
-                            <Grid item xs={2}>
-                                <Button variant="contained" color="primary" type="reset"
-                                        disabled={this.state.pending}
-                                        onClick={this.resetFilters.bind(this)}>
-                                    Reset
-                                </Button>
+                        <Grid item xs={12}>
+                            <Grid container spacing={4}>
+                                <Grid item xs={6}>
+                                    <Button variant="contained" color="primary" type="submit"
+                                            disabled={this.state.pending}>
+                                        Filter
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <Button variant="contained" color="primary" type="reset"
+                                            disabled={this.state.pending}
+                                            onClick={this.resetFilters.bind(this)}>
+                                        Reset
+                                    </Button>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
