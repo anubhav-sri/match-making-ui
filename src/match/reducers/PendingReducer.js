@@ -8,7 +8,8 @@ function pendingReducer(state = initialState, action) {
             ...state,
             pending: true
         };
-    } else if (action.type.endsWith("SUCCESS")) {
+    }
+    if (action.type.endsWith("SUCCESS") || action.type.endsWith("ERROR")) {
         return {
             ...state,
             pending: false

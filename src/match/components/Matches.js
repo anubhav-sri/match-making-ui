@@ -33,10 +33,17 @@ class Matches extends React.Component {
     render() {
         if (this.state.success) {
             return (
-                this.state.matches.map(m => <Match match={m}/>)
+                <div>
+                    <div>
+                        Found {this.state.matches.length} Matches for you
+                    </div>
+                    <div>
+                        {this.state.matches.map(m => <Match match={m}/>)}
+                    </div>
+                </div>
             )
         }
-        return ("");
+        return ("No Matches Found For You");
 
     }
 }

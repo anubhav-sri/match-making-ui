@@ -11,9 +11,9 @@ function MatchesReducer(state = initialState, action) {
             ...state,
             matches: action.matches,
         };
-    } else {
-        return state;
     }
+    return state;
+
 
 }
 

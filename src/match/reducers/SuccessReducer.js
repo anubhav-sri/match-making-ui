@@ -8,9 +8,15 @@ function SuccessReducer(state = initialState, action) {
             ...state,
             success: true
         };
-    } else {
-        return state;
     }
+    if (action.type.endsWith("ERROR") || action.type.endsWith("PENDING")) {
+        return {
+            ...state,
+            success: false
+        };
+    }
+    return state;
+
 
 }
 
