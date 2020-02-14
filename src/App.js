@@ -6,8 +6,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Provider from "react-redux/lib/components/Provider";
 import store from "./store";
 import Container from "@material-ui/core/Container";
-import {Route, BrowserRouter as Router} from "react-router-dom";
-import Matches from "./match/components/Matches";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import UserHome from "./match/components/UserHome";
 
 function App() {
     return (<Provider store={store}>
@@ -20,8 +20,8 @@ function App() {
             <div>
                 <Container maxWidth="sm">
                     <Router>
-                        <Route path="/user/:userId/matches"
-                               component={(props) => <Matches userId={props.match.params.userId}/>}/>
+                        <Route path="/user/:userId/"
+                               component={(props) => <UserHome userId={props.match.params.userId}/>}/>
                     </Router>
                 </Container>
             </div>
