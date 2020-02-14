@@ -20,7 +20,7 @@ function App() {
             <div>
                 <Container maxWidth="sm">
                     <Router>
-                        <Route path="/user/:userId/"
+                        <Route path="/users/:userId/"
                                component={(props) => <UserHome userId={props.match.params.userId}/>}/>
                     </Router>
                 </Container>
