@@ -1,5 +1,5 @@
-import {getMatchesError, getMatchesPending, getMatchesSuccess} from "./actions/MatchActions";
-import findMatches from "./service/FindMatchService";
+import {getMatchesError, getMatchesPending, getMatchesSuccess} from "../actions/MatchActions";
+import findMatches from "../service/FindMatchService";
 
 function getMatches(userId) {
     return (dispatch) => {

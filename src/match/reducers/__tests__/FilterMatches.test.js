@@ -1,8 +1,8 @@
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
-import filterMatches from "./FilterMatches";
+import filterMatches from "../FilterMatches";
 import mockAxios from "jest-mock-axios";
-import {GET_MATCHES_ERROR, GET_MATCHES_PENDING, GET_MATCHES_SUCCESS} from "./actions/MatchActions";
+import {GET_MATCHES_ERROR, GET_MATCHES_PENDING, GET_MATCHES_SUCCESS} from "../../actions/MatchActions";
 
 
 const store = configureStore([thunk])({});

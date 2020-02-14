@@ -1,4 +1,4 @@
-import getMatches from "./GetMatches";
+import getMatches from "../GetMatches";
 import configureStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import mockAxios from 'jest-mock-axios';

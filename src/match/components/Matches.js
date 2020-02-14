@@ -1,6 +1,6 @@
 import * as React from "react";
 import connect from "react-redux/lib/connect/connect";
-import getMatches from "../GetMatches";
+import getMatches from "../reducers/GetMatches";
 import Match from "./Match";
 
 class Matches extends React.Component {

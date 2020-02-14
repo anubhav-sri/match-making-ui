@@ -1,7 +1,7 @@
-import {getMatchesError, getMatchesPending, getMatchesSuccess} from "./actions/MatchActions";
-import {initialFilters} from "./components/FilterStates";
-import {filterMatchesError} from "./actions/FiltersActions";
-import findMatches from "./service/FindMatchService";
+import {getMatchesError, getMatchesPending, getMatchesSuccess} from "../actions/MatchActions";
+import {initialFilters} from "../components/FilterStates";
+import {filterMatchesError} from "../actions/FiltersActions";
+import findMatches from "../service/FindMatchService";
 
 function filterMatches(userId, filters) {
     return (dispatch) => {
