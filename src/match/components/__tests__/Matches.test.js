@@ -1,8 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import Matches from "./Matches";
-import store from '../../store';
+import Matches from "../Matches";
+import store from '../../../store';
 import {act} from 'react-dom/test-utils';
 import mockAxios from 'jest-mock-axios';
 
@@ -21,7 +21,10 @@ describe('<Matches>', () => {
             let resp = {data: {matches: [{displayName: "fname", city: {}}, {displayName: "anotherName", city: {}}]}};
             mockAxios.mockResponse(resp);
 
-            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches');
+            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches', {
+                params: {},
+                config: {headers: {latitude: 53.801277, longitude: -1.548567}}
+            });
             expect(containerWithData.textContent).toContain("fname");
             expect(containerWithData.textContent).toContain("anotherName");
         });
@@ -38,7 +41,10 @@ describe('<Matches>', () => {
             let respWithNoData = {data: {matches: []}};
             mockAxios.mockResponse(respWithNoData);
 
-            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches');
+            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches', {
+                params: {},
+                config: {headers: {latitude: 53.801277, longitude: -1.548567}}
+            });
             expect(containerWithoutData.textContent).toContain("Found 0 Matches for you");
         });
 
@@ -54,7 +60,10 @@ describe('<Matches>', () => {
             let respWithError = {message: "We will be get back soon."};
             mockAxios.mockError(respWithError);
 
-            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches');
+            expect(mockAxios.get).toHaveBeenCalledWith('http://localhost:8090/users/userId/matches', {
+                params: {},
+                config: {headers: {latitude: 53.801277, longitude: -1.548567}}
+            });
             expect(containerWithoutData.textContent).toContain("No Matches Found For You");
         });
 

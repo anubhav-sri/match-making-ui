@@ -1,5 +1,5 @@
 import React from 'react';
-import Match from './Match';
+import Match from '../Match';
 import {createMount} from '@material-ui/core/test-utils';
 
 describe('<Match />', () => {
