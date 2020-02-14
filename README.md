@@ -14,11 +14,13 @@
 To run the application simply run the command  **yarn start**
 
 The application by default runs on **PORT 3000**.
-This application expect the backend service to be running on port  **PORT 8090** on the same machine. To change the url for service, properties.js can be altered.
+This application expect the backend service to be running on port  **PORT 8090** on the same machine. To change the url for service, **properties.js** can be altered.
 
 Once the application is up, **http://localhost:3000/users/{userId}** will take to the user's home page.
 
-Given that the backend has data only for the user: 31eed42a-fdd1-4751-bcf3-00a4c8e40d7e, the app only works for the given user. Ofcourse, new users can be added as required.
+Given that the backend has data only for the user: **31eed42a-fdd1-4751-bcf3-00a4c8e40d7e**, the app only works for the given user.
+i.e. **(http://localhost:3000/users/31eed42a-fdd1-4751-bcf3-00a4c8e40d7e)**
+Ofcourse, new users can be added as required.
 The API at the backend takes latitude and longitude in the headers. The app instead of asking for user's location, hard codes the location of Leeds in all the calls.
 
 
